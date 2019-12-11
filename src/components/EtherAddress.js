@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import { Segment, Button, Grid, Popup } from 'semantic-ui-react'
+import { Segment, Button, Grid, Popup, Header } from 'semantic-ui-react'
 import * as config from '../config'
 import ModalPopup from '../utils/modalPopup'
 
@@ -34,12 +34,15 @@ const EtherAddress = props => {
                                 zIndex: -1
                             }}
                         />
-                        {props.address}
+                        <Header as="h4" className="no-margin">
+                            {props.address}
+                        </Header>
                     </Grid.Column>
                     <Grid.Column width={4}>
                         <Button
                             floated="right"
                             basic
+                            compact
                             color={config.COLOR}
                             icon="qrcode"
                             onClick={openModel}
@@ -50,6 +53,7 @@ const EtherAddress = props => {
                                     <Button
                                         onClick={copyToClipboard}
                                         floated="right"
+                                        compact
                                         basic
                                         color={config.COLOR}
                                         icon="copy"
