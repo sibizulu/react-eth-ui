@@ -3,6 +3,7 @@ import { Container, Header } from 'semantic-ui-react'
 import EtherAddress from './components/EtherAddress'
 import Blockie from './components/Blockie'
 import 'semantic-ui-css/semantic.min.css'
+import Minting from './components/Minting'
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                     spotcolor: '#000'
                 }}
             />
+            <Minting />
         </Container>
     )
 }
