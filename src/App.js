@@ -4,6 +4,7 @@ import EtherAddress from './components/EtherAddress'
 import Blockie from './components/Blockie'
 import 'semantic-ui-css/semantic.min.css'
 import Minting from './components/Minting'
+import TokenSend from './components/TokenSend'
 
 function App() {
     return (
@@ -25,6 +26,15 @@ function App() {
                 }}
             />
             <Minting />
+            <TokenSend
+                initialValues={{
+                    From: 'sahghjgdhsgjgkljhjahhkj',
+                    Token: 'jhdsghjdgjhsg'
+                }}
+                onSubmit={(values, dispatch) => {
+                    console.log('hello', values)
+                }}
+            />
         </Container>
     )
 }
