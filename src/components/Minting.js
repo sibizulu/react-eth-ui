@@ -9,11 +9,12 @@ let Minting = props => {
     return (
         <Segment color={config.COLOR}>
             <Form onSubmit={handleSubmit}>
-                <Header as="h5">Minting Token</Header>
+                <Header as="h4">Minting Token</Header>
                 <Field
                     name="ether"
                     component={InputField}
                     placeholder="Enter ether"
+                    label="Ether"
                 />
                 <Form.Button
                     content="Submit"
