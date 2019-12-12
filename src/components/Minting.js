@@ -4,6 +4,8 @@ import { Segment, Form, Header } from 'semantic-ui-react'
 import { InputField } from 'react-semantic-redux-form'
 import * as config from '../config'
 
+const required = value => (value ? undefined : 'Required')
+
 let Minting = props => {
     const { handleSubmit } = props
     return (
@@ -15,6 +17,7 @@ let Minting = props => {
                     component={InputField}
                     placeholder="Enter ether"
                     label="Ether"
+                    validate={[required]}
                 />
                 <Form.Button
                     content="Submit"
