@@ -1,8 +1,14 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
-import { Segment, Form, Button, Header, Divider } from 'semantic-ui-react'
+import { Segment, Form, Header, Divider } from 'semantic-ui-react'
 import { InputField } from 'react-semantic-redux-form'
 import * as config from '../config'
+
+const required = value => (value ? undefined : 'Required')
+const number = value =>
+    value && isNaN(Number(value)) ? 'Must be a number' : undefined
+const positiveNum = value =>
+    value && value <= 0 ? 'Invalid amount' : undefined
 
 const TokenSend = props => {
     const { handleSubmit, onSubmit } = props
@@ -33,6 +39,7 @@ const TokenSend = props => {
                     label="Receiver wallet address"
                     component={InputField}
                     placeholder="Receiver wallet address"
+                    validate={[required]}
                 />
 
                 <Field
@@ -41,6 +48,7 @@ const TokenSend = props => {
                     label="Amount"
                     component={InputField}
                     placeholder="amount"
+                    validate={[required, number, positiveNum]}
                 />
                 <Form.Button
                     content="Submit"
